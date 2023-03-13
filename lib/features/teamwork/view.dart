@@ -4,14 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glovvr/core/color_manager/color_manager.dart';
 import 'package:glovvr/widgets/widgets/custom_appbar.dart';
 import 'package:glovvr/widgets/widgets/custom_text.dart';
+import 'package:line_icons/line_icons.dart';
 import '../../core/data/local/cacheHelper.dart';
 import '../../core/keys/keys.dart';
 import '../../core/validator/validator.dart';
 import '../home/view.dart';
 part 'units/form.dart';
 
-class TestimonialView extends StatelessWidget {
-  TestimonialView({Key? key}) : super(key: key);
+class TeamWorkView extends StatelessWidget {
+  TeamWorkView({Key? key}) : super(key: key);
   GlobalKey<ScaffoldState> passScaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -24,13 +25,11 @@ class TestimonialView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomAppbar(
+              title: 'TEAM MEMBERS',
               color: Colors.transparent,
-              title: 'TESTIMONIALS',
               scaffoldKey: passScaffoldKey,
             ),
-
-            Expanded(
-                    child: form()),
+            Expanded(child: form()),
           ],
         ),
       ),

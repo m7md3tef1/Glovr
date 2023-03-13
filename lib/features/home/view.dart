@@ -5,7 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:glovvr/core/app_images/app_images.dart';
 import 'package:glovvr/core/color_manager/color_manager.dart';
 import 'package:glovvr/features/home/states.dart';
+import 'package:glovvr/features/teamwork/view.dart';
 import 'package:glovvr/features/testimonial/view.dart';
+import 'package:glovvr/ourskills/view.dart';
 import 'package:glovvr/widgets/widgets/custom_text.dart';
 
 import '../../core/data/local/cacheHelper.dart';

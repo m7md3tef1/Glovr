@@ -14,12 +14,12 @@ class OnDrawer extends StatelessWidget {
             ),
             Container(
               color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
+              child: const Padding(
+                padding: EdgeInsets.all(12.0),
                 child: Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
                   child: Row(
-                    children: const [Icon(Icons.menu, size: 27)],
+                    children: [Icon(Icons.menu, size: 27)],
                   ),
                 ),
               ),
@@ -42,7 +42,7 @@ class OnDrawer extends StatelessWidget {
             CustomRowDrawer(
               text: 'Our Skills',
               image: AppImages.skill,
-              //   navigatename: const UploadJobsView(),
+                navigatename:  OurSkillView(),
             ),
             CustomRowDrawer(
               text: 'Testimonials',
@@ -57,7 +57,7 @@ class OnDrawer extends StatelessWidget {
             CustomRowDrawer(
               text: 'Team Members',
               image: AppImages.team,
-              //    navigatename: const BlogsView(),
+                navigatename:  TeamWorkView(),
             ),
             CustomRowDrawer(
               text: 'Request A Discount',

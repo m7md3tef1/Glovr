@@ -11,6 +11,7 @@ import 'custom_text.dart';
 class CustomAppbar extends StatelessWidget {
   String title;
   var font;
+  var color;
   var icon;
   GlobalKey<ScaffoldState>? scaffoldKey;
   bool? hideImage;
@@ -18,6 +19,7 @@ class CustomAppbar extends StatelessWidget {
       {Key? key,
       required this.title,
       this.icon,
+        this.color,
       this.hideImage,
       this.font,
       this.scaffoldKey})
@@ -27,9 +29,9 @@ class CustomAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        decoration: const BoxDecoration(
-            color: ColorManager.secondaryColor,
-            borderRadius: BorderRadius.only(
+        decoration:  BoxDecoration(
+            color:color ?? ColorManager.secondaryColor,
+            borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(20),
                 bottomRight: Radius.circular(20))),
         height: 70.h,

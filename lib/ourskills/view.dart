@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glovvr/core/color_manager/color_manager.dart';
+import 'package:glovvr/features/home/view.dart';
 import 'package:glovvr/widgets/widgets/custom_appbar.dart';
 import 'package:glovvr/widgets/widgets/custom_text.dart';
-import '../../core/data/local/cacheHelper.dart';
-import '../../core/keys/keys.dart';
-import '../../core/validator/validator.dart';
-import '../home/view.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
+
 part 'units/form.dart';
 
-class TestimonialView extends StatelessWidget {
-  TestimonialView({Key? key}) : super(key: key);
+class OurSkillView extends StatelessWidget {
+  OurSkillView({Key? key}) : super(key: key);
   GlobalKey<ScaffoldState> passScaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -25,7 +24,7 @@ class TestimonialView extends StatelessWidget {
           children: [
             CustomAppbar(
               color: Colors.transparent,
-              title: 'TESTIMONIALS',
+              title: 'OUR SKILLS',
               scaffoldKey: passScaffoldKey,
             ),
 
