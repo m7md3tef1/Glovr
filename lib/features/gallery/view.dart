@@ -25,7 +25,8 @@ class _GalleryViewState extends State<GalleryView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomAppbar(title: 'Gallery'),
+
+            CustomAppbar(title: 'Gallery',color: Colors.white,),
             SizedBox(
               height: 22.h,
             ),

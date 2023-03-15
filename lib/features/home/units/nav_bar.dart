@@ -52,23 +52,21 @@ class _BottomBar extends StatelessWidget {
     return Column(
       children: [
         icon == null
-            ? Stack(
-                children: const [
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage(
-                        AppImages.logo,
-                      ),
-                    ),
+            ? const Align(
+                alignment: Alignment.center,
+                child: CircleAvatar(
+                  radius: 28,
+                  foregroundColor: ColorManager.secondaryColor,
+                  backgroundColor: ColorManager.secondaryColor,
+                  backgroundImage: AssetImage(
+                    AppImages.logo,
                   ),
-                ],
+                ),
               )
             : SvgPicture.asset(
                 icon,
                 height: 28,
-                width: 28,
+                width: 50,
                 color: HomeCubit.get(context).currentIndex == index
                     ? Colors.black
                     : ColorManager.darkGrey,

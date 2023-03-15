@@ -7,6 +7,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: 0.72.sh,
+        width: .95.sw,
         child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.r),
@@ -14,14 +15,14 @@ class Body extends StatelessWidget {
             ),
             child: GridView.builder(
               itemCount: 6,
-              physics: BouncingScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: .9),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, childAspectRatio: .95.r),
               itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 10.0),
                 child: Container(
                   //height: 50.h,
-                  width: 1.sw,
+                  width: .8.sw,
                   child: Card(
                     elevation: 5,
                     shape: RoundedRectangleBorder(

@@ -7,20 +7,21 @@ import '../../core/keys/keys.dart';
 import '../home/view.dart';
 
 class SplashScreen extends StatelessWidget {
-  final Widget? nextScreen;
+  // final Widget? nextScreen;
 
-  const SplashScreen({Key? key, this.nextScreen}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: AnimatedSplashScreen(
-            duration: 2500,
-            splashIconSize: 150,
-            splash: Image.asset(AppImages.logo),
-            nextScreen:  Login(),
-
-            splashTransition: SplashTransition.fadeTransition,
-            backgroundColor: Colors.white));
+    return SafeArea(
+      child: Scaffold(
+          body: AnimatedSplashScreen(
+              duration: 2500,
+              splashIconSize: 300,
+              splash: Image.asset(AppImages.logo),
+              nextScreen: Login(),
+              splashTransition: SplashTransition.fadeTransition,
+              backgroundColor: Colors.black)),
+    );
   }
 }

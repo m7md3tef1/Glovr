@@ -22,7 +22,8 @@ class _HowViewState extends State<HowView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomAppbar(title: 'How it work'),
+
+            CustomAppbar(title: 'How it work',color: Colors.white,),
             SizedBox(
               height: 22.h,
             ),

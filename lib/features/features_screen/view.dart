@@ -10,29 +10,31 @@ import '../../core/router/router.dart';
 part 'units/body.dart';
 
 class FeaturesView extends StatefulWidget {
-   const FeaturesView({Key? key}) : super(key: key);
+  const FeaturesView({Key? key}) : super(key: key);
 
   @override
   State<FeaturesView> createState() => _FeaturesViewState();
 }
 
 class _FeaturesViewState extends State<FeaturesView> {
- @override
-
+  @override
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      body:
-      SafeArea(
+      body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomAppbar(title: 'SYSTEM ANALYSIS IMAGE'),
+
+            CustomAppbar(
+              title: 'SYSTEM ANALYSIS IMAGE',
+              color: Colors.white,
+              raduis: 0,
+            ),
             SizedBox(
               height: 22.h,
             ),
-            Expanded(child:
-            Body())
+            Expanded(child: Body())
           ],
         ),
       ),

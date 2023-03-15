@@ -21,15 +21,22 @@ class _ComponentsViewState extends State<ComponentsView> {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CustomAppbar(title: 'Components'),
-            SizedBox(
-              height: 22.h,
-            ),
-            Body(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              
+              CustomAppbar(
+                title: 'Components',
+                color: Colors.white,
+                raduis: 0,
+              ),
+              SizedBox(
+                height: 22.h,
+              ),
+              Body(),
+            ],
+          ),
         ),
       ),
     );

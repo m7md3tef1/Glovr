@@ -11,13 +11,13 @@ import 'package:glovvr/features/Auth/units/customer_text_field.dart';
 import 'package:glovvr/features/Auth/units/logo.dart';
 import 'package:glovvr/features/home/view.dart';
 import 'package:glovvr/widgets/widgets/custom_appbar.dart';
+import 'package:glovvr/widgets/widgets/custom_scaffold.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../core/dialoges/toast.dart';
 import '../../core/widgets/custom_card.dart';
 import '../../core/validator/validator.dart';
 import '../../widgets/widgets/custom_button.dart';
-
 
 class Login extends StatelessWidget {
   Login({Key? key}) : super(key: key);
@@ -30,58 +30,59 @@ class Login extends StatelessWidget {
     return v.KeyboardVisibilityBuilder(
       builder: (context, visible) => Padding(
         padding: EdgeInsets.only(bottom: visible ? .31.sh : 0),
-        child: Scaffold(
-
-          body:  InkWell(
-            onTap: (){
+        child: CustomScaffold(
+          body: InkWell(
+            onTap: () {
               FocusScope.of(context).unfocus();
             },
-            child: Column(
-              children: [
+            child: SafeArea(
+              child: Column(
+                children: [
+                  CustomAppbar(
+                      title: 'Login', color: Colors.white, hideImage: true),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: CustomCard(
+                        widget: Form(
+                          key: formKey,
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Lottie.asset('assets/images/login.json',
+                                  height: 300.h),
 
-                CustomAppbar(title: 'Login',hideImage:true),
-                const SizedBox(
-                  height: 18,
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: CustomCard(
-                      widget: Form(
-                        key: formKey,
-                        child: Column(
-                          children: [
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Lottie.asset('assets/images/login.json',height: 300.h),
-
-                            CustomTextFormField(
-                              padding: 40.0,
-                              hintText: 'Enter E-mail',
-                              controller: emailController,
-                              validate: Validator.validateEmail,
-                            ),
-                            CustomTextFormField(
-                              padding: 40.0,
-                              hintText: 'Enter Password',
-                              controller: passwordController,
-                              validate: Validator.validatePassword,
-                              obs: true,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                           // Privacy(VehiclesCubit.get(context).value),
-                            const SizedBox(
-                              height: 5,
-                            ),
+                              CustomTextFormField(
+                                padding: 40.0,
+                                hintText: 'Enter E-mail',
+                                controller: emailController,
+                                validate: Validator.validateEmail,
+                              ),
+                              CustomTextFormField(
+                                padding: 40.0,
+                                hintText: 'Enter Password',
+                                controller: passwordController,
+                                validate: Validator.validatePassword,
+                                obs: true,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              // Privacy(VehiclesCubit.get(context).value),
+                              const SizedBox(
+                                height: 5,
+                              ),
 
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 12.0),
                                 child: CustomButton(
                                   function: () {
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(builder: (context) {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (context) {
                                       return const Home();
                                     }));
                                   },
@@ -89,15 +90,16 @@ class Login extends StatelessWidget {
                                   color: ColorManager.secondaryColor,
                                 ),
                               ),
-                            NoAccount(),
-                            NotLogged()
-                          ],
+                              NoAccount(),
+                              //     NotLogged()
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

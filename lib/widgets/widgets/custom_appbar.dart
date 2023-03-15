@@ -13,6 +13,7 @@ class CustomAppbar extends StatelessWidget {
   var font;
   var color;
   var icon;
+  double? raduis;
   GlobalKey<ScaffoldState>? scaffoldKey;
   bool? hideImage;
   CustomAppbar(
@@ -20,6 +21,7 @@ class CustomAppbar extends StatelessWidget {
       required this.title,
       this.icon,
         this.color,
+        this.raduis,
       this.hideImage,
       this.font,
       this.scaffoldKey})
@@ -27,58 +29,55 @@ class CustomAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        decoration:  BoxDecoration(
-            color:color ?? ColorManager.secondaryColor,
-            borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20))),
-        height: 70.h,
-        width: double.infinity,
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 20.sp),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: InkWell(
-                          onTap: () {
-                            print('clicked');
-                            if (scaffoldKey != null) {
-                              print('clicked2');
+    return Container(
 
-                              scaffoldKey!.currentState!.openDrawer();
-                            } else {
-                              Home.scaffoldStateKey.currentState!.openDrawer();
-                            }
-                          },
-                          child: const Icon(
-                            Icons.menu,
-                            size: 25,
-                          )),
+      decoration:  BoxDecoration(
+          color:color ?? ColorManager.secondaryColor,
+          borderRadius:  BorderRadius.only(
+              bottomLeft:raduis ==null? const Radius.circular(0):Radius.circular(raduis!),
+              bottomRight: raduis==null ? const Radius.circular(0):Radius.circular(raduis!),)),
+      height: 90.h,
+      width: double.infinity,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding:  EdgeInsets.only(left: 30.r),
+                  child: InkWell(
+                      onTap: () {
+                        print('clicked');
+                        if (scaffoldKey != null) {
+                          print('clicked2');
+
+                          scaffoldKey!.currentState!.openDrawer();
+                        } else {
+                          Home.scaffoldStateKey.currentState!.openDrawer();
+                        }
+                      },
+                      child: const Icon(
+                        Icons.menu,
+                        size: 25,
+                      )),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Center(
+                    child: CustomText(
+                      hideImage: hideImage,
+                      text: title,
+                      align: TextAlign.center,
+                      fontSize: font ?? 21.sp,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Expanded(
-                      flex: 3,
-                      child: Center(
-                        child: CustomText(
-                          hideImage: hideImage,
-                          text: title,
-                          align: TextAlign.center,
-                          fontSize: font ?? 21.sp,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ],
             ),
-          ),
+          ],
         ),
       ),
     );

@@ -16,15 +16,6 @@ class Body extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.r),
             color: ColorManager.greyColor,
-              // boxShadow: [
-              //   BoxShadow(
-              //     offset: const Offset(0, 5),
-              //     blurRadius: 0,
-              //     color: ColorManager.greyColor.withOpacity(1),
-              //   ),
-              // ],
-           //   color: Colors.white
-            //  color: Colors.transparent,
 
           ),
           child: ListView.builder(

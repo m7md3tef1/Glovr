@@ -50,7 +50,7 @@ class CustomText extends StatelessWidget {
                     image: const AssetImage(
                       AppImages.logo,
                     ),
-                    height: 30.h,
+                    height: 40.h,
                     width: 50.w,
                   )
                 : Container(),
