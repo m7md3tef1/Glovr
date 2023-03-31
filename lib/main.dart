@@ -6,8 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glovvr/core/bloc_observer.dart';
 import 'package:glovvr/core/data/local/cacheHelper.dart';
 import 'package:glovvr/core/router/router.dart';
-import 'package:glovvr/features/Auth/login.dart';
-import 'package:glovvr/features/Auth/sign_up.dart';
 import 'package:glovvr/features/home/controller.dart';
 import 'package:glovvr/features/splash/splash_view.dart';
 import 'package:provider/provider.dart';
