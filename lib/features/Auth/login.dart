@@ -39,7 +39,11 @@ class Login extends StatelessWidget {
               child: Column(
                 children: [
                   CustomAppbar(
-                      title: 'Login', color: Colors.white, hideImage: true),
+                    title: 'Login',
+                    color: Colors.white,
+                    hideImage: true,
+                    icons: false,
+                  ),
                   const SizedBox(
                     height: 18,
                   ),

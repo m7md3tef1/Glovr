@@ -52,7 +52,11 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     children: [
                       CustomAppbar(
-                          title: 'Sign Up', color: Colors.white, hideImage: true),
+                        title: 'Sign Up',
+                        color: Colors.white,
+                        hideImage: true,
+                        icons: false,
+                      ),
                       const SizedBox(
                         height: 18,
                       ),

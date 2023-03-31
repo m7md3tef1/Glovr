@@ -27,7 +27,7 @@ class OnDrawer extends StatelessWidget {
             CustomRowDrawer(
               text: 'Stats',
               image: AppImages.stats,
-              // navigatename: const Home(),
+               navigatename:  OurAwesomeStatsView(),
             ),
             CustomRowDrawer(
               text: 'Events',
@@ -62,7 +62,7 @@ class OnDrawer extends StatelessWidget {
             CustomRowDrawer(
               text: 'Request A Discount',
               image: AppImages.request,
-              //  navigatename: PackagesView(),
+                navigatename: RequestView(),
             ),
           ],
         ),
